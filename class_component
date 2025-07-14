@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>React js Basics: Class vs functional component </title>
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standdalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            class ClassComponent extends React.Component {
+                constructor(props){
+                    super(props);
+                }
+                render() {
+                    return (
+                        <div>
+                            <h1>Hello from Class Component</h1>
+                        </div>
+                    );
+                }
+            }
+            const root=ReactDOM.createRoot(document.getElementById("root"));
+            root.render(<ClassComponent /> );
+        </script>
+    </body>
+</html>
