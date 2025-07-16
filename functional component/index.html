@@ -61,11 +61,40 @@ jsx is the syntex extentionof java script that looks like html , it is used to d
     const data=["vikram","Suryanarayan","Suraj k ballal","venjata","sandhya","NITESH"]
     const tags=[]
     for(let index=0;index<data.length;index++){
-    tags.push(<li>data[index]</li>);}
+    tags.push(<li>{data[index]}</li>);}
     return 
     <div>
         <ul>
             {tags}
         </ul>
     </div>}
-</script>-->
+</script>
+
+in above code at the place of these line of code 
+for(let index=0;index<data.length;index++){
+    tags.push(<li>{data[index]}</li>);}
+    you can use map like this 
+    const tag=data.map((item)=>
+    {
+    return <li>{item}</li>});
+    
+    2. jsx is the just syntex of React.createElement()
+    this:
+    const element=<h1 classname="greet">Hello</h1>
+    become:
+    const element=React.createElement("h1",{className:"greet"},"Hello")
+    
+    
+    <script type="text/babel">
+        function Component(){
+        const style={
+        color:"blue",
+        backgroundColor:"yellow"
+        };
+        return <h1 style={style}>Vikram</h1>;
+    }
+        const divTag=document.getElementBYId("root");
+        const root=ReactDOM.createRoot(divTag);
+        root.render(<Component/>);
+        when you use inline css then you use double curly bracket 
+    return <h1 style={{color:"blue",backgroundColor:"Yellow"}}>Vikram</h1>
