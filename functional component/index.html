@@ -28,3 +28,44 @@
     </body>
 </html>
 
+<!--
+<script type="text/babel">
+    function generateHtml(name){
+    const h1Array=[];
+    for(let i=0;i<20;i++){
+    h1Array.push(<h1>{name}</h1>)}
+    return (
+    <div>
+        {h1Array}
+        {generateButton()}
+    </div>);}
+    function generateButton(){
+    retrurn <button>Click Me</button>}
+    const divTag=document.getElementById("root");
+    const root=ReactDOM.createRoot(divTag);
+    root.render(<div>{generateHtml("vikram")}{generateHtml("abdul")}</div>)
+</script>
+like in line 46 you can write this {generteHtm("vikram")} also like this <GenerateHtml name="vikram"/>
+like in functional component you can pass argument props in the place of name and in this function where you
+want to access name you can access by {props.name}
+
+and also note this point like when youcall any component or functional component then if property or attribute is string then simply 
+write like thus name="vikram" but other than this type you use middle bracket like <GenerateHtml age={32} name"Vikarm"/>
+
+
+what is the jsx?
+jsx is the syntex extentionof java script that looks like html , it is used to discribe the ui in react 
+
+<script type="text/babel">
+    function Component(props){
+    const data=["vikram","Suryanarayan","Suraj k ballal","venjata","sandhya","NITESH"]
+    const tags=[]
+    for(let index=0;index<data.length;index++){
+    tags.push(<li>data[index]</li>);}
+    return 
+    <div>
+        <ul>
+            {tags}
+        </ul>
+    </div>}
+</script>-->
