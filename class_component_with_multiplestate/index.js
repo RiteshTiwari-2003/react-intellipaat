@@ -38,3 +38,5 @@ class ClassComponent extends React.Component{
         )
     }
 }
+const root=ReactDOM.createRoot(document.getElementById("root"));
+root.render(<ClassComponent/>);
