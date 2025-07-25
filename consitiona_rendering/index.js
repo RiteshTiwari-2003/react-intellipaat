@@ -4,6 +4,7 @@ class Toggle extends React.Component{
         this.state={
             isOn:true
         };
+        this.toggle=this.toggle.bind(this);
     }
     toggle=()=>{
         this.setState(prevState=>(
@@ -21,3 +22,6 @@ class Toggle extends React.Component{
 }
 const root=ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Toggle/>);
+
+/*class component is smart , container component mnage logic and state .
+while functional component is dumb component , presentation component are jsut visuals that only display what they are told */
