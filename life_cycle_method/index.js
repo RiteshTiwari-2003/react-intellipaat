@@ -22,3 +22,16 @@ class LifeCycleMethod extends React.Component{
 }
 const root=ReactDOM.createRoot(document.getElementById("root"));
 root.render(<LifeCycleMethod myLove="Mother"/>);
+/**when parent rerender child will rerender also automatically 
+ * i want to stop unneccesary rerendering of child component 
+ * when?
+ * when state and props changes 
+ * when parent rerender 
+ * before render method is called 
+ * shouldcomponentupdate()
+ * 
+ * in component did update we pass two props like prevprops, and prevState and in shouldcomponentupdate nextState,nextprops
+ * 
+ * like in life cycle order should component update just called before of render method and component did update always called along with render method when any changes happen just after 
+ * render method
+ */
