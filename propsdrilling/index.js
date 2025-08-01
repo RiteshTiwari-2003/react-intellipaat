@@ -79,3 +79,7 @@ function ParentComponent(){
 }
 const root=ReactDOM.createRoot(document.getElementById("root"));
 root.render(<ParentComponent/>);
+/**props drilling 
+ * props drilling refers to the process of passing data from a parent component to a deeply nested cjhild component through multiple layers of intermidiate compoents
+ * 
+ */
