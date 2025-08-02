@@ -82,4 +82,15 @@ root.render(<ParentComponent/>);
 /**props drilling 
  * props drilling refers to the process of passing data from a parent component to a deeply nested cjhild component through multiple layers of intermidiate compoents
  * 
+ * 
+ * interview question :
+ * what is react context?
+ * React contextprovide a way to share data across componets without having to manually passong the props through every level .
+ * 
+ * think of it as a global state for a component subtree 
+ * 
+ * 
+ * 2. how to create context ?
+ * const MyContext=React.createContext(defaultvalue);
+ * 
  */
