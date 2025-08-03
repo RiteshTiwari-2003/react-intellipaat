@@ -45,7 +45,7 @@ function FormComponent(){
     const handleSubmit=(e)=>{
         e.preventDefault();
         const isErrorInSubmittedForm=validate();
-        if(isErrorInSubmittedForm){
+        if(!isErrorInSubmittedForm){
             alert("form submitted successfully");
             console.log("submitted form:",formData);
         }
