@@ -53,26 +53,14 @@ function FormComponent(){
     return(
         <form onSubmit={handleSubmit}>
             <div>
-                <label>Name:</label>
-                <input type="text" name="name" value={formData.name} onChange={handleChange}/>
-                <DisplayErrorComponent message={errors.name}/>
-            </div>
-            <div>
-                <label>Email:</label>
-                <input type="email" name="email" value={formData.email} onChange={handleChange}/>
-                <DisplayErrorComponent message={errors.email}/>
-            </div>
-            <div>
-                <label>Age:</label>
-                <input type="number" name="age" value={formData.age} onChange={handleChange}/>
-                <DisplayErrorComponent message={errors.age}/>
-            </div>
-            <div>
                 <label>Password:</label>
-                <input type="password" name="password" value={formData.password} onChange={handleChange}/>
+                <input type="password" name="password" value={formData.password} onChange={handleChange} onInput={validate} onBlur={validate}/>
+                
                 <DisplayErrorComponent message={errors.password}/>
             </div>
+            
             <button type="submit">Submit</button>
         </form>
     )
 }
+/**onBlur is used like when you click in input and click on outside of input then it will validate the input  */
