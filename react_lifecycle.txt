@@ -1,0 +1,63 @@
+React Life cycle ;
+
+Life Cycle of component :
+each component in react has a lifecycle which you can monitor and manipulate during its three main phases:
+the three phases are : mounting , updating and unmounting 
+
+1. Mounting ;
+mounting means putting elements into dom 
+React has four buildin method that gets called int the order when mounting a component :
+1. constructor()
+2. getDerivedStateFromprops()
+3. render()
+4. componentdidmount()
+
+the render () method is required and will always be called , the other are optional and will be caled if you define them .
+
+constructor()
+constructor is called before anything else when teh component is initiated , and it is the natural place to set up the initial state and other the initial values 
+the constructor method is called with the props as a argument 
+
+getderivedstatefromprops()
+this method is called right before rendering the element int he dom 
+this is the natural place to set the state object based on the initial props 
+it takes state as argument and return an object with changes in state 
+
+class Header extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            favoirateColor:"red"
+        };
+    }
+    static getDerivedStateFromProps(props,state){
+        return {favoirateColor:props.favcol};
+    }
+    render(){
+        return(
+            <h1>My favoirate color is {this.state.favoirateColor} </h1>
+        )
+    }
+}
+const root=ReactDOM.createRoot(document.getElementbyId("root"));
+root.render(<Header favcol="yellow"/>)
+
+
+3. render() method is always called , this method is required and is the method that actually output the html to the dom 
+
+4. the componentdidmount(); this method is called after render method , this is where you run statement that require that the component is already placed in dom 
+
+the next phase is updating when the component is updating in this phase these built in function come like 
+1. getDerivedStateFromprops()
+2. shouldcomponentupdate()
+3. render()
+4. getSanpShotBeforeupdate()
+5. componentdidupdate()
+
+the render ethod is required and always be called the other are o[tional] 
+
+3. phase 
+unmounting 
+the next phase in the lifecycle is when a component is removed from the dom 
+react has only one built in function for unmounting phase which is componentwillunmount()
+
