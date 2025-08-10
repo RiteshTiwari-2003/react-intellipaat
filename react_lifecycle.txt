@@ -61,3 +61,7 @@ unmounting
 the next phase in the lifecycle is when a component is removed from the dom 
 react has only one built in function for unmounting phase which is componentwillunmount()
 
+#### Redux 
+Redux can be used in any framework 
+not just in react it is used in any framework , redux is javascript library for statemanagement 
+state is what ? dont confuse , here is we talk about global state not about component state and props talk about application state management 
