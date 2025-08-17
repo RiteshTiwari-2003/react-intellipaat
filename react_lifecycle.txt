@@ -68,3 +68,51 @@ state is what ? dont confuse , here is we talk about global state not about comp
 
 
 ## ## redux is just action dispatch reducer update the state then again component re render 
+redux is a state management library for javascript apps , often used with react.
+it provide a single centralized store for the entire application's state 
+instead of passing props deeply (props drilling), Redux allow any component to access state directly 
+state is updated using action and reducers 
+
+core principle of redux :
+    1. single source of truth : one global store for the entire application 
+    2. state is read only :
+        you can not modify state directly , you must dispatch an action 
+        change via pure function : reducer define how state changes when action are dispatched 
+
+redux workflow:
+    1. store: hold the global state 
+    2. action : a plain js object describing what to do (eg. {type:"INCREMENT"})
+    3. reducer : apure function (state,action)=>newState
+    4. dispatch ; a way to send action to reducer 
+    5. provider ;   a wrapper component that makes the redux store avaialable to all react component .
+    6. useSelector/connect: read data from store 
+    7. useDispatch/mapDispatchFromprops: send action to store 
+
+
+implementation in code 
+we will make a simple counter app with redux -> increment and decrement 
+step A; 
+1. install react and redux-react 
+npm install redux react-redux 
+step B:
+    create redux file 
+    store.js 
+    import {createStore} from "redux";
+    const initialState={count:0};
+    //reducer
+    function counterReducer(state=initialState,action){
+        switch(action.type){
+            case "INCREMENT":
+                return {count:state.count+1}
+            case "DECRE<EMT":
+                return {count:state.count-1}
+            default:
+                return state 
+        }
+    }
+    //store 
+    const store=createStore(counterReducer)
+    export defualt store;
+
+    wrap app with provider 
+    ReactDOM.render(<Provider store={store}><App/></Provider>,document.getElementById("root"))
