@@ -116,3 +116,31 @@ step B:
 
     wrap app with provider 
     ReactDOM.render(<Provider store={store}><App/></Provider>,document.getElementById("root"))
+
+
+using redux in class based component 
+import React,{Component} from "react";
+import {connect} from "react-redux";
+class CounterClass extends Component{
+    render(){
+        return(
+            <div>
+            <h2>Count: {this.props.count}</h2>
+            <button onClick={this.props.increment}>Increment</button>
+            <button onClick={this.props.decrement}>Decrement</button>
+            </div>
+        )
+    }
+}
+//map redux state to props 
+const mapStateToProps=(state)=>{
+    return {count:state.count};
+}
+//map dispatc action to the props 
+const mapDispatchToProps=(dispatch)=>{
+    return{
+        increment:()=>dispatch({type:"INCREMENT"}),
+        decrement:()=>dispatch({type:"DECREMENT"})
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(CounterClass)
